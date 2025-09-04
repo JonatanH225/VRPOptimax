@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VRPOptimax - Descarga e Instrucciones</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; }
+    body {
+      background: linear-gradient(135deg, #e0eafc, #cfdef3); /* tonos suaves azul/gris */
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      color: #333;
+    }
+    .container {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 40px 30px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      max-width: 700px;
+      width: 100%;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    h1 { font-size: 2.5rem; margin-bottom: 20px; color: #1e3a5f; }
+    p { font-size: 1.1rem; margin-bottom: 20px; line-height: 1.5; color: #1e3a5f; }
+    a.download-btn {
+      display: inline-block; padding: 15px 30px; font-size: 1.2rem; font-weight: 700;
+      color: #fff; background: #f6a36b; border-radius: 50px; text-decoration: none;
+      transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin-bottom: 30px;
+    }
+    a.download-btn:hover {
+      background: #f7b482; transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    /* Accordion styles */
+    .accordion {
+      background: #d9e2f3; border-radius: 10px; margin: 10px 0;
+      cursor: pointer; padding: 15px 20px; text-align: left; font-size: 1.1rem;
+      font-weight: 700; transition: background 0.3s ease;
+    }
+    .accordion:hover { background: #c7d4eb; }
+    .panel {
+      padding: 0 20px; display: none; background-color: #eef3fb;
+      font-weight: 400; text-align: left; margin-bottom: 10px; border-left: 3px solid #f6a36b;
+    }
+    footer { margin-top: 20px; font-size: 0.9rem; color: #555; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>VRPOptimax</h1>
+    <p>Descarga la última versión de MiApp y sigue las instrucciones para instalar y usar la aplicación correctamente.</p>
+    <a class="download-btn" href="https://drive.google.com/file/d/1wTkYMUyTWBtFPFrLKVPVphdMgOchH4aL/view?usp=sharing" target="_blank">Descargar VRPOptimax</a>
+
+    <!-- Instructivo paso a paso -->
+    <div class="accordion">1. Descargar archivo de prueba</div>
+    <div class="panel">
+      Primero, descarga el archivo Excel de prueba. Este archivo contiene la estructura de datos para ingresar los puntos (coordenadas), vehículos y nombres de los puntos.
+    </div>
+
+    <div class="accordion">2. Llenar los datos</div>
+    <div class="panel">
+      Abre el archivo Excel y llena los datos con los puntos, vehículos y nombres correspondientes.
+    </div>
+
+    <div class="accordion">3. Cargar archivo en VRPOptimax</div>
+    <div class="panel">
+      Una vez que tengas los datos, abre MiApp y carga el archivo Excel en la aplicación.
+    </div>
+
+    <div class="accordion">4. Optimizar rutas</div>
+    <div class="panel">
+      Haz clic en el botón "Optimizar rutas" para que la aplicación procese la información. Ten en cuenta que a mayor cantidad de rutas, mayor será el tiempo de procesamiento. Se recomienda no superar los 200 puntos para mantener un tiempo razonable.
+    </div>
+
+    <div class="accordion">5. Visualizar resultados</div>
+    <div class="panel">
+      Después de procesar los datos, podrás ver las rutas optimizadas en la tabla inferior. El botón "Ver en mapa" mostrará la ruta seleccionada en Google Maps. Debajo también encontrarás un mapa con todas las rutas creadas y un filtro para seleccionar cada una.
+    </div>
+
+    <footer>© 2025 MiApp. Todos los derechos reservados.</footer>
+  </div>
+
+  <script>
+    const accordions = document.querySelectorAll('.accordion');
+    accordions.forEach(acc => {
+      acc.addEventListener('click', () => {
+        acc.classList.toggle('active');
+        const panel = acc.nextElementSibling;
+        panel.style.display = (panel.style.display === 'block') ? 'none' : 'block';
+      });
+    });
+  </script>
+</body>
+</html>
